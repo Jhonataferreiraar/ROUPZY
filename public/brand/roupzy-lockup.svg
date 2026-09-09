@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" role="img" aria-labelledby="title desc">
+  <title id="title">Roupzy</title>
+  <desc id="desc">Roupzy, seu armário. Seu próximo look.</desc>
+  <rect width="96" height="96" rx="27" fill="#3454F5"/>
+  <path d="M25 70V25h23c14 0 23 7 23 18s-9 18-23 18H25m0-18h22m7 18 19 17" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25 25v45" fill="none" stroke="#FF6974" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="71" cy="25" r="5" fill="#B7EAFF"/>
+  <text x="120" y="50" fill="#10162D" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="4">ROUPZY</text>
+  <text x="121" y="73" fill="#68708C" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="1.2">SEU ARMÁRIO. SEU PRÓXIMO LOOK.</text>
+</svg>

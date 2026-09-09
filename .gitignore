@@ -1,0 +1,23 @@
+node_modules/
+.next/
+out/
+coverage/
+*.log
+*.tsbuildinfo
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Local editor and operating-system files
+.DS_Store
+Thumbs.db
+.vscode/
+.visual-audit/
+premium-audit.json
+.vercel/
+
+# Generated Supabase local state
+.temp/
+supabase/.branches/
+supabase/.temp/

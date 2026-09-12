@@ -25,17 +25,17 @@ export function SiteNavigation() {
   }
 
   return (
-    <div className="site-navigation" key={pathname}>
-      <nav className="site-nav" aria-label="Navegação principal">
+    <div className="ri-navigation site-navigation" key={pathname}>
+      <nav className="ri-nav site-nav" aria-label="Navegação principal">
         {links.map(([href, label]) => <Link className={isActive(pathname, href) ? 'is-active' : ''} href={href} aria-current={isActive(pathname, href) ? 'page' : undefined} key={href}>{label}</Link>)}
       </nav>
-      <button className="site-mobile-toggle navigation-mobile-toggle" type="button" aria-expanded={open} aria-controls="site-mobile-menu" onClick={() => setOpen((current) => !current)}>
+      <button className="ri-mobile-toggle site-mobile-toggle navigation-mobile-toggle" type="button" aria-expanded={open} aria-controls="site-mobile-menu" onClick={() => setOpen((current) => !current)}>
         <span className="sr-only">{open ? 'Fechar menu' : 'Abrir menu'}</span>
         <i aria-hidden="true" />
       </button>
-      {open ? <nav className="site-mobile-menu" id="site-mobile-menu" aria-label="Navegação móvel">
-        <span className="site-mobile-menu-label">Navegação</span>
-        {links.map(([href, label]) => <Link className={isActive(pathname, href) ? 'is-active' : ''} href={href} aria-current={isActive(pathname, href) ? 'page' : undefined} onClick={closeMenu} key={href}>{label}<span aria-hidden="true">↗</span></Link>)}
+      {open ? <nav className="ri-mobile-menu site-mobile-menu" id="site-mobile-menu" aria-label="Navegação móvel">
+        <span className="ri-mobile-menu-label site-mobile-menu-label">Navegação</span>
+        {links.map(([href, label]) => <Link className={isActive(pathname, href) ? 'is-active' : ''} href={href} aria-current={isActive(pathname, href) ? 'page' : undefined} onClick={closeMenu} key={href}>{label}<span className="ri-arrow" aria-hidden="true" /></Link>)}
       </nav> : null}
     </div>
   )

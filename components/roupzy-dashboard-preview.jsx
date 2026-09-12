@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
+import { BrandMark } from '@/components/brand'
 const navigation = [
   ['overview', 'Visão geral'],
   ['closet', 'Meu closet'],
@@ -62,7 +63,7 @@ export function RoupzyDashboardPreview() {
     <div className="rq-command-chrome"><span>ROUPZY / ESPAÇO PESSOAL</span><span><i /> DEMONSTRAÇÃO</span></div>
     <div className="rq-command-layout">
       <aside className="rq-command-sidebar">
-        <div className="rq-command-brand"><span>R</span><div><strong>Meu espaço</strong><small>organizado para você</small></div></div>
+        <div className="rq-command-brand"><BrandMark className="brand-mark" size={34} /><div><strong>Meu espaço</strong><small>organizado para você</small></div></div>
         <span className="rq-command-label">NAVEGAR</span>
         <nav aria-label="Demonstração do painel">
           {navigation.map(([id, label], index) => <button type="button" className={activeView === id ? 'is-active' : ''} aria-pressed={activeView === id} onClick={() => setActiveView(id)} key={id}><b>{String(index + 1).padStart(2, '0')}</b><span>{label}</span></button>)}

@@ -3,6 +3,11 @@ import './reference-landing.css'
 import './roupzy.css'
 import './roupzy-redesign.css'
 import './roupzy-v3.css'
+import './roupzy-v4.css'
+import './roupzy-impeccable.css'
+import './roupzy-tech.css'
+
+import { MotionOrchestrator } from '@/components/motion-orchestrator'
 
 export const metadata = {
   title: 'Roupzy — Seu armário. Seu próximo look.',
@@ -20,7 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body className="rf-system ri-system"><MotionOrchestrator />{children}</body>
     </html>
   )
 }

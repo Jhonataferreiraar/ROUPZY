@@ -6,6 +6,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
+import { BrandMark } from '@/components/brand'
 import { clothingCategoryLabel } from '@/lib/ui/labels'
 
 const categories = [
@@ -238,7 +239,7 @@ export function ClosetManager({ initialItems = [], addOnly = false }) {
               </div>
             </article>
           ))}
-          {!visibleItems.length ? <div className="app-empty"><span className="app-empty-mark">{items.length ? '⌕' : 'R'}</span><strong>{items.length ? 'Nenhuma peça corresponde aos filtros.' : 'Seu arquivo começa aqui.'}</strong><p>{items.length ? 'Ajuste a busca, a categoria ou o estado da análise para encontrar uma peça.' : 'Adicione sua primeira peça para montar combinações a partir do que você já tem.'}</p></div> : null}
+          {!visibleItems.length ? <div className="app-empty"><span className="app-empty-mark">{items.length ? '⌕' : <BrandMark className="brand-mark" size={44} />}</span><strong>{items.length ? 'Nenhuma peça corresponde aos filtros.' : 'Seu arquivo começa aqui.'}</strong><p>{items.length ? 'Ajuste a busca, a categoria ou o estado da análise para encontrar uma peça.' : 'Adicione sua primeira peça para montar combinações a partir do que você já tem.'}</p></div> : null}
         </div>
       </section> : <section className="closet-add-next-panel"><span className="dashboard-panel-kicker">DEPOIS DO CADASTRO</span><h2>Seu arquivo fica<br />{' '}<em>mais inteligente.</em></h2><p>Você poderá revisar os atributos, filtrar suas peças e usar tudo nas próximas combinações.</p><Link className="app-outline-button" href="/app/closet">Abrir meu closet <span aria-hidden="true">↗</span></Link></section>}
     </div>

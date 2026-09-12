@@ -5,13 +5,13 @@ import { LandingNavigation } from './landing-navigation'
 
 export function SiteHeader({ home = false }) {
   return (
-    <header className="rz-header">
-      <div className="rz-shell rz-header-inner">
-        <Link className="rz-header-brand" href="/" aria-label="Roupzy"><Brand /></Link>
+    <header className={'ri-site-header' + (home ? ' ri-site-header-home' : '')}>
+      <div className="ri-site-header-inner">
+        <Link className="ri-site-brand" href="/" aria-label="Roupzy"><Brand /></Link>
         {home ? <LandingNavigation /> : <SiteNavigation />}
-        <div className="rz-header-actions">
-          <Link className="rz-header-login" href="/login">Entrar</Link>
-          <Link className="rz-button rz-button-small" href="/cadastro">Começar <span aria-hidden="true">↗</span></Link>
+        <div className="ri-site-actions">
+          <Link className="ri-site-login" href="/login">Entrar</Link>
+          <Link className="ri-cta-button ri-cta-button-small" href="/cadastro">Começar <span className="ri-arrow" aria-hidden="true" /></Link>
         </div>
       </div>
     </header>

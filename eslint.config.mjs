@@ -7,6 +7,8 @@ export default defineConfig([
     '.next/**',
     'out/**',
     'build/**',
-    'next-env.d.ts'
+      'next-env.d.ts',
+      // Deliberately vulnerable fixtures used only by the SAST training lab.
+      'security-lab/**'
   ])
 ])

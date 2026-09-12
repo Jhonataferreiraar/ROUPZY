@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 
+import { BrandMark } from '@/components/brand'
 import { adminActionLabel, adminOutcomeLabel, adminResourceLabel, adminRoleLabel } from '@/lib/ui/labels'
 
 const emptyData = {
@@ -50,7 +51,7 @@ export function AdminGlobalDashboard({ role = 'owner', email = '', initialData =
 
   return <>
     <section className="admin-global-hero admin-command-hero" id="overview">
-      <div className="admin-global-hero-top"><div className="admin-hero-account"><span className="admin-global-mark">R</span><div><span className="admin-global-kicker">ROUPZY / CONTROLE GERAL</span><p>Conta proprietária · {email || 'acesso autenticado'}</p></div></div><div className="admin-command-top-actions"><span className="admin-global-role">{adminRoleLabel(role)}</span><button className="admin-refresh-control" type="button" onClick={load} disabled={state.status === 'loading'}>{state.status === 'loading' ? 'Atualizando…' : 'Atualizar dados'}</button></div></div>
+      <div className="admin-global-hero-top"><div className="admin-hero-account"><BrandMark className="admin-global-mark" size={28} /><div><span className="admin-global-kicker">ROUPZY / CONTROLE GERAL</span><p>Conta proprietária · {email || 'acesso autenticado'}</p></div></div><div className="admin-command-top-actions"><span className="admin-global-role">{adminRoleLabel(role)}</span><button className="admin-refresh-control" type="button" onClick={load} disabled={state.status === 'loading'}>{state.status === 'loading' ? 'Atualizando…' : 'Atualizar dados'}</button></div></div>
       <div className="admin-global-hero-content"><div className="admin-command-copy"><div className="admin-command-label-row"><span className="admin-global-kicker">CENTRAL DO NEGÓCIO</span><span className="admin-command-live"><i /> Operação acompanhada</span></div><h1>O produto inteiro<br />{' '}<em>em perspectiva.</em></h1><p>Usuários, produto, receita, operação e segurança reunidos em uma visão feita para quem decide.</p><div className="admin-command-actions"><Link className="admin-primary-action" href="/admin/usuarios">Gerenciar usuários <span aria-hidden="true">↗</span></Link><a className="admin-secondary-action" href="#activity">Ver atividade</a></div></div><div className="admin-command-readout"><span className="admin-readout-label">LEITURA DO AMBIENTE</span><div><small>Acesso atual</small><strong>{adminRoleLabel(role)}</strong></div><div><small>Escopo</small><strong>Controle global</strong></div><div><small>Dados</small><strong>Produto conectado</strong></div><span className="admin-readout-foot"><i /> Sessão protegida e monitorada</span></div></div>
     </section>
     {state.message ? <p className="admin-global-feedback" role="alert">{state.message}</p> : null}

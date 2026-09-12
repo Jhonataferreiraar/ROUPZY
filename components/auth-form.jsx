@@ -71,7 +71,7 @@ export function AuthForm({ mode = 'login', endpoint, redirectTo = '/app', submit
       <PasswordField label="Senha" autoComplete={isSignup ? 'new-password' : 'current-password'} minLength={8} value={form.password} onChange={(value) => update('password', value)} placeholder="Mínimo de 8 caracteres" />
       <button className="auth-submit" type="submit" disabled={state.status === 'loading'} aria-busy={state.status === 'loading'}>
         {state.status === 'loading' ? 'Aguarde…' : submitLabel || (isSignup ? 'Criar meu espaço' : 'Entrar no meu espaço')}
-        <span aria-hidden="true">↗</span>
+        <span className="ri-arrow" aria-hidden="true" />
       </button>
       {state.message ? (
         <p className={'auth-feedback auth-feedback-' + state.status} role={state.status === 'error' ? 'alert' : 'status'}>

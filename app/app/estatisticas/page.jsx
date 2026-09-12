@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import { BrandMark } from '@/components/brand'
 import { getAuthContext } from '@/lib/auth/server'
 
 export const dynamic = 'force-dynamic'
@@ -55,7 +56,7 @@ export default async function StatisticsPage() {
       <div className="stats-dashboard-grid">
         <section className="stats-panel">
           <div className="app-section-label"><span>Seu arquivo</span><span>{activePieces.length ? 'por categoria' : 'ainda vazio'}</span></div>
-          {categories.length ? <div className="stats-category-list">{categories.map(([category, count]) => <div className="stats-category-row" key={category}><div><strong>{categoryLabels[category] || category}</strong><span>{count} {count === 1 ? 'peça' : 'peças'}</span></div><div className="stats-bar"><span style={{ width: `${Math.round((count / maxCategoryCount) * 100)}%` }} /></div></div>)}</div> : <div className="app-empty app-empty-small"><span className="app-empty-mark">R</span><strong>Seu arquivo começa aqui.</strong><p>Registre algumas peças para entender como o seu closet se organiza.</p></div>}
+          {categories.length ? <div className="stats-category-list">{categories.map(([category, count]) => <div className="stats-category-row" key={category}><div><strong>{categoryLabels[category] || category}</strong><span>{count} {count === 1 ? 'peça' : 'peças'}</span></div><div className="stats-bar"><span style={{ width: `${Math.round((count / maxCategoryCount) * 100)}%` }} /></div></div>)}</div> : <div className="app-empty app-empty-small"><BrandMark className="app-empty-mark" size={44} /><strong>Seu arquivo começa aqui.</strong><p>Registre algumas peças para entender como o seu closet se organiza.</p></div>}
         </section>
 
         <section className="stats-panel stats-panel-dark">

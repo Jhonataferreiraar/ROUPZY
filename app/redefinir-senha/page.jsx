@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import { PasswordForm } from '@/components/password-form'
+import { BrandMark } from '@/components/brand'
 import { SiteFrame } from '@/components/site-frame'
 
 export const metadata = {
@@ -19,7 +20,7 @@ export default function ResetPasswordPage() {
           <PasswordForm mode="reset" />
           <div className="access-actions"><Link className="inline-action" href="/login">Voltar para entrar <span aria-hidden="true">↗</span></Link><Link className="inline-action" href="/esqueci-minha-senha">Pedir outro link <span aria-hidden="true">↗</span></Link></div>
         </div>
-        <aside className="access-card"><span className="access-card-mark">R</span><div><small>SEGURANÇA</small><strong>O seu acesso<br />{' '}fica com você.</strong></div><span>O link é validado pelo Supabase Auth.</span></aside>
+        <aside className="access-card"><BrandMark className="access-card-mark" size={48} /><div><small>SEGURANÇA</small><strong>O seu acesso<br />{' '}fica com você.</strong></div><span>O link é validado pelo Supabase Auth.</span></aside>
       </section>
     </SiteFrame>
   )

@@ -8,7 +8,8 @@ export function AppShell({ children, profile }) {
   const name = profile?.display_name || 'seu espaço'
   const initial = name.charAt(0).toUpperCase()
   return (
-    <main className="app-site">
+    <main className="app-site ri-client-shell">
+      <a className="ri-skip-link" href="#client-content">Pular para o conteúdo</a>
       <div className="app-workspace">
         <aside className="app-sidebar" aria-label="Painel pessoal">
           <div className="app-sidebar-top">
@@ -39,7 +40,7 @@ export function AppShell({ children, profile }) {
               <AppNavigation mobileOnly />
             </div>
           </header>
-          <div className="app-content">{children}</div>
+          <div className="app-content" id="client-content">{children}</div>
         </section>
       </div>
     </main>

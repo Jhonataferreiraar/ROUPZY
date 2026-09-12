@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import { PasswordForm } from '@/components/password-form'
+import { BrandMark } from '@/components/brand'
 import { SiteFrame } from '@/components/site-frame'
 
 export const metadata = {
@@ -19,7 +20,7 @@ export default function ForgotPasswordPage() {
           <PasswordForm mode="forgot" />
           <div className="access-actions"><Link className="inline-action" href="/login">Voltar para entrar <span aria-hidden="true">↗</span></Link><Link className="inline-action" href="/contato">Falar com a gente <span aria-hidden="true">↗</span></Link></div>
         </div>
-        <aside className="access-card"><span className="access-card-mark">R</span><div><small>STATUS DO ACESSO</small><strong>Recuperação<br />{' '}segura.</strong></div><span>Seu espaço continua pessoal e privado.</span></aside>
+        <aside className="access-card"><BrandMark className="access-card-mark" size={48} /><div><small>STATUS DO ACESSO</small><strong>Recuperação<br />{' '}segura.</strong></div><span>Seu espaço continua pessoal e privado.</span></aside>
       </section>
     </SiteFrame>
   )

@@ -17,6 +17,11 @@ Thumbs.db
 premium-audit.json
 .vercel/
 
+# Local agent tooling and intentionally insecure training fixtures
+.agents/
+.codex/
+security-lab/
+
 # Generated Supabase local state
 .temp/
 supabase/.branches/

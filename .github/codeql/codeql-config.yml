@@ -1,0 +1,12 @@
+name: Roupzy SAST training
+
+paths:
+  - app
+  - components
+  - lib
+
+paths-ignore:
+  - node_modules
+  - .next
+  - out
+  - build

@@ -8,7 +8,7 @@ export async function getBillingOverview() {
   const admin = createSupabaseAdminClient()
   const [subscriptions, events, plans] = await Promise.all([
     admin.from('subscriptions').select('id, owner_id, provider, status, current_period_end, created_at, plans(name)').order('created_at', { ascending: false }).limit(100),
-    admin.from('billing_events').select('id, event_type, amount_minor, currency, status, created_at').order('created_at', { ascending: false }).limit(50),
+    admin.from('billing_events').select('id, event_type, amount_minor, currency, occurred_at, created_at').order('created_at', { ascending: false }).limit(50),
     admin.from('plans').select('id, name, active').order('display_order', { ascending: true })
   ])
   if (subscriptions.error || events.error || plans.error) throw new DomainError('dependency_unavailable', 'Não foi possível carregar a operação financeira.')

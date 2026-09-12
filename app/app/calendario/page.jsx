@@ -23,7 +23,7 @@ function monthCells(entries) {
 
 export default async function CalendarPage() {
   const { supabase, user } = await getAuthContext()
-  const { data, error } = await supabase.from('outfit_history').select('id, used_on, notes, outfits(id, vibe, occasion)').eq('owner_id', user.id).order('used_on', { ascending: false }).limit(90)
+  const { data, error } = await supabase.from('outfit_history').select('id, used_on, outfits(id, vibe, occasion)').eq('owner_id', user.id).order('used_on', { ascending: false }).limit(90)
   if (error) throw new Error('Não foi possível carregar o calendário.')
   const entries = data || []
   const cells = monthCells(entries)

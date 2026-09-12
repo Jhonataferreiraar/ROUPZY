@@ -1,0 +1,14 @@
+{
+  "name": "roupzy-sca-training-lab",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Manifesto isolado para validar ferramentas SCA no GitHub.",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "axios": "0.21.1",
+    "json5": "1.0.1",
+    "lodash": "4.17.20",
+    "minimist": "1.2.5",
+    "node-fetch": "2.6.1"
+  }
+}

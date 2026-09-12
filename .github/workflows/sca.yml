@@ -1,0 +1,37 @@
+name: SCA — dependências de treinamento
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - security-lab-sca/package.json
+      - security-lab-sca/package-lock.json
+      - package.json
+      - package-lock.json
+
+permissions:
+  contents: read
+
+jobs:
+  audit-training-manifest:
+    name: Auditar manifesto de treinamento
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Executar npm audit
+        run: npm audit --prefix security-lab-sca --audit-level=high
+
+  dependency-review:
+    name: Revisar dependências alteradas
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Revisar dependências do pull request
+          uses: actions/dependency-review-action@v4

@@ -28,6 +28,9 @@ jobs:
       - name: Executar npm audit
         run: npm audit --prefix security-lab-sca --audit-level=high
 
+      - name: Auditar manifesto principal
+        run: npm audit --audit-level=high
+
   dependency-review:
     name: Revisar dependências alteradas
     if: github.event_name == 'pull_request'

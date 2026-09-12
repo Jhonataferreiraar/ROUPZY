@@ -1,6 +1,6 @@
 # Laboratório SCA do Roupzy
 
-Este manifesto contém versões históricas com vulnerabilidades públicas conhecidas para testar Dependabot, GitHub Dependency Review e `npm audit`. Ele é independente do aplicativo: não possui código executável, não é importado pelo Roupzy e não deve ser instalado na raiz do projeto.
+Este manifesto contém versões históricas com vulnerabilidades públicas conhecidas para testar Dependabot, GitHub Dependency Review e `npm audit`. O mesmo conjunto de versões também está declarado como dependência de desenvolvimento no manifesto principal, exclusivamente para que o alerta apareça no projeto Roupzy enquanto ele está em desenvolvimento. Essas bibliotecas não são importadas pelo aplicativo e não devem ser usadas em código funcional.
 
 As versões foram fixadas de propósito. O objetivo do exercício é observar os alertas, atualizar cada dependência para uma versão corrigida e confirmar que a ferramenta deixa de reportar o problema.
 
@@ -16,7 +16,7 @@ Com o lockfile atual, `npm audit` encontra cinco vulnerabilidades:
 | `lodash` | `4.17.20` | vulnerabilidades altas, incluindo command injection |
 | `node-fetch` | `2.6.1` | 1 alta — encaminhamento indevido de cabeçalhos |
 
-Esse resultado pertence apenas ao manifesto de treinamento. A auditoria do `package.json` principal do Roupzy continua limpa.
+Esse resultado é intencional para o exercício. A auditoria do `package.json` principal do Roupzy também encontrará os mesmos alertas até que as versões sejam atualizadas.
 
 ## Exercício
 
